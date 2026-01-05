@@ -1,0 +1,246 @@
+/* src/styles/App.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg-color: #F8F9FC; /* Softer, slightly blue-tinted background */
+  --content-bg: #FFFFFF;
+  --sidebar-bg: #FFFFFF;
+  --border-color: #EAECEF; /* Lighter, less intrusive border */
+  --hover-bg: #F8F9FC;
+
+  /* A refined primary color palette */
+  --primary-color: #4C6EF5; /* A more modern, vibrant blue */
+  --primary-hover: #4263Eb;
+  --primary-light: #EDF2FF; /* For backgrounds on selected/active items */
+
+  /* Professional text colors for perfect contrast */
+  --text-primary: #181C25; /* A softer black */
+  --text-secondary: #5A6474;
+  --text-tertiary: #9AA5B6;
+
+  --font-family: 'Inter', sans-serif;
+  --radius: 8px;
+
+  /* New shadow variables for a consistent, layered look */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+}
+
+.app-layout {
+  display: flex;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: var(--sidebar-bg);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-right: 1px solid var(--border-color);
+  box-sizing: border-box;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 20px 15px 15px;
+}
+
+.sidebar-header .logo-icon {
+  color: var(--primary-color);
+}
+
+.sidebar-header h2 {
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.sidebar-nav a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-weight: 500;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.sidebar-nav a:hover {
+  background-color: #F3F4F6;
+}
+
+.sidebar-nav a.active {
+  background-color: #E6F8F5;
+  color: var(--primary-color);
+}
+
+.sidebar-pro-tip {
+  margin-top: 30px;
+  padding: 15px;
+  background-color: #F3F4F6;
+  border-radius: var(--radius);
+  display: flex;
+  gap: 12px;
+}
+
+.sidebar-pro-tip p {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: var(--text-secondary);
+}
+.sidebar-pro-tip p strong {
+  color: var(--text-primary);
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px 20px;
+  background-color: var(--bg-color);
+  overflow-y: auto;
+  height: calc(100vh - 48px);
+}
+
+.page-container {
+  background-color: var(--main-bg);
+  padding: 24px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: 1.75rem;
+}
+.page-header p {
+  margin: 4px 0 0;
+  color: var(--text-secondary);
+}
+
+.file-selector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 1px solid var(--border-color);
+  background-color: #fff;
+  border-radius: var(--radius);
+  font-family: var(--font-family);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.file-selector svg:first-child { color: var(--primary-color); }
+
+.dataset-info-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background-color: #F9FAFB;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  margin-bottom: 24px;
+}
+
+.file-details {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.file-details > svg {
+  color: var(--text-secondary);
+  font-size: 1.5rem;
+}
+
+.file-details div {
+  display: flex;
+  flex-direction: column;
+}
+
+.file-details strong {
+  font-weight: 500;
+}
+
+.file-details span {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.export-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.export-button:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Add these new styles to the bottom of src/styles/App.css */
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px; /* Add some space between the dropdowns */
+}
+
+.theme-selector {
+  padding: 8px 12px;
+  border: 1px solid var(--border-color);
+  background-color: #fff;
+  border-radius: var(--radius);
+  font-family: var(--font-family);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* A reusable class for animated elements */
+.animated-component {
+  animation: fadeIn 0.5s ease-out forwards;
+}

@@ -1,0 +1,151 @@
+/* src/styles/DataTable.css */
+.datatable-wrapper {
+  background-color: var(--content-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow-md);
+}
+
+.table-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  width: 320px;
+  transition: var(--transition-fast);
+}
+.search-bar:focus-within {
+  box-shadow: 0 0 0 2px var(--primary-light);
+  border-color: var(--primary-color);
+}
+.search-bar input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 0.9rem;
+  font-family: var(--font-family);
+  background-color: transparent;
+}
+
+.filter-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 1px solid var(--border-color);
+  background-color: #fff;
+  border-radius: var(--radius);
+  font-family: var(--font-family);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+/* AG-Grid Custom Theme */
+
+.ag-theme-alpine.ag-custom-theme {
+  --ag-font-family: var(--font-family);
+  --ag-background-color: var(--content-bg);
+  --ag-header-background-color: transparent; /* Make header transparent for gradient */
+  --ag-row-hover-color: var(--hover-bg);
+  --ag-border-color: var(--border-color);
+  --ag-selected-row-background-color: var(--primary-light);
+  border-radius: var(--radius);
+  user-select: none;
+  border: 1px solid #000000;
+}
+
+.ag-theme-alpine.ag-custom-theme .ag-menu {
+  background-color: #FFFFFF !important;
+  border: 1px solid var(--border-color) !important;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  border-radius: var(--radius);
+}
+.ag-theme-alpine.ag-custom-theme .ag-menu-option {
+  color: var(--text-primary) !important;
+}
+.ag-theme-alpine.ag-custom-theme .ag-menu-option-active {
+  background-color: #F1F5F9 !important;
+}
+
+
+.ag-theme-alpine.ag-custom-theme .ag-header {
+  border-bottom: 1.5px solid #000000;
+  border-top: 1.5px solid #000000;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.ag-custom-theme .ag-header-cell {
+  border-right: 1.5px solid #000000;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.ag-custom-theme .ag-header-cell-label {
+  justify-content: flex-start;
+  height: 100%;
+}
+
+.ag-custom-theme .custom-header-description {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+/* Cell Styles */
+
+.ag-custom-theme .ag-cell {
+  font-size: 0.9rem;
+  text-align: left;
+  border: 1px solid var(--border-color);
+}
+.ag-custom-theme .ag-cell:not(:first-child) {
+    border-left: none;
+}
+.ag-custom-theme .ag-root-wrapper {
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+}
+
+/* Pagination Styles */
+.ag-custom-theme .ag-paging-panel {
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border-color);
+}
+.ag-theme-alpine.ag-custom-theme .ag-row-hover {
+  background-color: #EFF6FF !important;
+}
+
+.ag-theme-alpine.ag-custom-theme .ag-cell-range-selected {
+  background-color: #d7edf7 !important;
+  /* Add border to make it pop from regular selection */
+  border-left: 1px solid #1890ff !important;
+  border-right: 1px solid #1890ff !important; /* A light blue color */
+}
+
+
+
+.custom-header-title {
+  font-weight: 600; 
+  color: #1F2937;   
+  line-height: 1.2;
+  text-align: center;
+}
+
+.custom-header-description {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #6B7280;
+  line-height: 1.2;
+}

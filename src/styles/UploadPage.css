@@ -1,0 +1,159 @@
+/* src/styles/UploadPage.css */
+
+/* --- Main Layout & Animation --- */
+.upload-page-container {
+  max-width: 1000px;
+  margin: 40px auto; /* Add vertical margin for better spacing */
+  padding: 32px;
+}
+
+/* Apply staggered animation to children */
+.upload-page-container > * {
+  animation: fadeIn 0.6s ease-out forwards;
+  opacity: 0; /* Start hidden for animation */
+}
+
+/* --- Header --- */
+.upload-page-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
+  margin: 0;
+}
+.upload-page-header .subtitle {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-top: 8px;
+  margin-bottom: 32px;
+}
+
+/* --- Professional Drop Zone --- */
+.upload-box-wrapper {
+  background-color: var(--content-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.upload-box {
+  background-color: #F8F9FC; /* A subtle off-white */
+  border: 2px dashed var(--border-color);
+  border-radius: var(--radius);
+  padding: 48px;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+.upload-box.active,
+.upload-box:hover {
+  border-color: var(--primary-color);
+  background-color: var(--primary-light);
+  transform: scale(1.02); /* Subtle zoom effect */
+}
+.upload-box-content .upload-icon {
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--primary-color);
+  display: inline-block;
+  margin-bottom: 16px;
+  transition: var(--transition-fast);
+}
+.upload-box:hover .upload-icon {
+  transform: scale(1.1);
+}
+.upload-box-content p {
+  margin: 8px 0 0;
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+.upload-box-content .browse-link {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+.upload-box-content .supported-formats {
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+  margin-top: 12px;
+}
+
+/* --- Selected File Display --- */
+.selected-files-wrapper {
+  margin-top: 32px;
+}
+.selected-files-wrapper h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+/* --- File Item --- */
+.file-item {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  margin-bottom: 24px;
+  background-color: var(--content-bg);
+  box-shadow: var(--shadow-sm);
+  gap: 16px; /* This is the key change to add space */
+}
+
+.file-item .file-icon {
+  font-size: 1.75rem;
+  color: var(--primary-color);
+  /* margin-right is no longer needed because of gap */
+}
+
+.file-item .file-details {
+  flex-grow: 1;
+}
+.file-item .file-details span {
+  display: block;
+}
+.file-item .file-name {
+  font-weight: 500;
+  margin-bottom: 4px; /* Add space between name and size */
+}
+.file-item .file-size {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+.file-item .file-type-badge {
+  background-color: #E6F8F5;
+  color: var(--primary-color);
+  padding: 4px 10px;
+  border-radius: 99px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* --- Premium "Process" Button --- */
+.process-button {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius);
+  color: #fff;
+  cursor: pointer;
+  background: var(--primary-color);
+  transition: var(--transition-fast);
+  box-shadow: 0 4px 14px 0 rgba(76, 110, 245, 0.39);
+}
+.process-button:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px 0 rgba(76, 110, 245, 0.45);
+}
+.process-button:disabled {
+  background-color: #D1D5DB;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}

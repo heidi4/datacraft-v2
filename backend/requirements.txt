@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+celery
+redis
+pandas
+numpy
+statsmodels
+scikit-learn
+requests
+python-multipart
+gunicorn

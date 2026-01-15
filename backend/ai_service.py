@@ -4,7 +4,7 @@ import requests
 import re 
 import time
 
-OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY","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")
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY","")
 if not OPENROUTER_API_KEY:
     raise ValueError("CRITICAL ERROR: OPENROUTER_API_KEY environment variable is not set.")
 
@@ -351,4 +351,5 @@ def get_treatment_plan_hypotheses(diagnostic_report: dict) -> dict:
     except Exception as e:
         # Automatic Fallback
         print(f"AI Service Failed: {e}. Reverting to Failsafe Plan.")
+
         return _generate_fallback_plan(diagnostic_report, target_var, temporal_col)
